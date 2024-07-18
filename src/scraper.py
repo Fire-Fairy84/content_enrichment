@@ -8,7 +8,8 @@ capsInput = string.capwords(userInput)
 lists = capsInput.split()
 searchTerm = "_".join(lists)
 
-url = 'https://en.wikipedia.org/wiki/'+searchTerm
+url = 'https://en.wikipedia.org/wiki/' + searchTerm
+
 
 def scrapebot(url):
     page = requests.get(url)
@@ -20,5 +21,5 @@ def scrapebot(url):
     for paragraph in soup.select('p', limit=5):
         print(paragraph.getText())
 
-scrapebot(url)
 
+scrapebot(url)
