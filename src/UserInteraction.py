@@ -19,6 +19,8 @@ def saveFile():
     return filename,userFileExtension
 
 
+
+"""
 def translator():
     translator = input("desea traductir el tema a castellano")
     userText = input("Escribe el texto que quieres traducir: ")
@@ -33,7 +35,7 @@ print(saveFile())
 print(translator())
 
 
-"""
+
             print("Traducir esto al inglés? (sí/no)")
             translate = get_user_input("> ")
             if translate.lower() not in ['sí', 'no']:
