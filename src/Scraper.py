@@ -11,14 +11,21 @@ searchTerm = "_".join(lists)
 url = 'https://en.wikipedia.org/wiki/'+searchTerm
 
 def scrapebot(url):
-    page = requests.get(url)
-    content = page.text
-    soup = BeautifulSoup(content, 'lxml')
-    box = soup.find('header', class_='mw-body-header')
-    title = box.find(id='firstHeading').get_text()
-    print(title)
-    for paragraph in soup.select('p', limit=5):
-        print(paragraph.getText())
+    try:
+        texts = []
+        page = requests.get(url)
+        content = page.text
+        soup = BeautifulSoup(content, 'lxml')
+        box = soup.find('header', class_='mw-body-header')
+        title = box.find(id='firstHeading').get_text()
+        print(title)
+        for paragraph in soup.select('p', limit=5):
+            texts.append(paragraph.getText())
+            print(paragraph.getText())
+        return texts
+    except ValueError as e:
+        print(f'Error: {e}')
+
 
 scrapebot(url)
 
