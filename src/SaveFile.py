@@ -4,7 +4,7 @@ from reportlab.pdfgen import canvas
 
 
 class SaveFile:
-    def init(self, text):
+    def __init__(self, text):
         self.text = text
     def saveAsPdf(self, fileName):
         try:
