@@ -1,7 +1,7 @@
-from .UserInteraction import UserInteraction
+import UserInteraction
 from .Scraper import Scraper
 from .Translator import Translator
-from .CreatePDF import SaveFile
+from .CreateFile import SaveFile
 
 class ContentEnricher:
     WikiBaseUrl = 'https://es.wikipedia.org/wiki/'
