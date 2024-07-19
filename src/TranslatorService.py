@@ -2,7 +2,7 @@ from deep_translator import (GoogleTranslator)
 from deep_translator.exceptions import TranslationNotFound
 
 
-class Translator:
+class TranslatorService:
 
     def __init__(self):
         pass
