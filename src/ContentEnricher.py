@@ -1,4 +1,4 @@
-import UserInteraction
+from .UserInteraction import UserInteraction
 from .Scraper import Scraper
 from .Translator import Translator
 from .CreateFile import SaveFile
@@ -19,18 +19,22 @@ class ContentEnricher:
 
         searchUrl = self.WikiBaseUrl + searchTerm
         texts = self.scraper.scrapebot(searchUrl)
+        fullText = "\n".join(texts)
         print("===============================================")
+
         if translate.lower() == "y":
-            translatedText = self.translator.translateText("\n".join(texts), "auto", "en")
+            translatedText = self.translator.translateText(fullText, "auto", "en")
             print("=== TEXTO TRADUCIDO A INGLÉS ===")
             print(translatedText)
             print("================================")
-        elif translate.lower() == "n":
-            self.saveFile = SaveFile("\n".join(texts))
-            if userFileExtension == "pdf":
-                self.saveFile.saveAsPdf(fileName + ".pdf")
-            elif userFileExtension == "txt":
-                self.saveFile.saveAsTxt(fileName + ".pdf")
-            else:
-                print("Unable to create file.")
-            fileSaved = True
+            self.saveFile = SaveFile(translatedText)
+        else:
+            self.saveFile = SaveFile(fullText)
+
+        if userFileExtension == "pdf":
+            self.saveFile.saveAsPdf(fileName + ".pdf")
+        elif userFileExtension == "txt":
+            self.saveFile.saveAsTxt(fileName + ".txt")
+        else:
+            print("Unable to create file.")
+        fileSaved = True
