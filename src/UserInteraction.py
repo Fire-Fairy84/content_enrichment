@@ -1,5 +1,6 @@
 import string
 
+
 class UserInteraction:
     def __init__(self):
         pass
@@ -18,8 +19,7 @@ class UserInteraction:
         filename = "_".join(filenameSplit)
         userFileExtension = input("Por favor, escoger la extension: 'pdf' o 'txt'")
         print(f"el nombre de tu archivo es: {filename}.{userFileExtension}")
-        return filename,userFileExtension
-
+        return filename, userFileExtension
 
     def translator(self):
         translatorResponse = input("¿Desea traducir el tema al inglés? (Y / N): ").lower()

@@ -1,6 +1,6 @@
 from .UserInteraction import UserInteraction
 from .Scraper import Scraper
-from .Translator import Translator
+from .TranslatorService import TranslatorService
 from .CreateFile import SaveFile
 
 class ContentEnricher:
@@ -9,7 +9,7 @@ class ContentEnricher:
     def __init__(self):
         self.ui = UserInteraction()
         self.scraper = Scraper()
-        self.translator = Translator()
+        self.translator = TranslatorService()
         self.saveFile = None
 
     def process(self):
