@@ -22,5 +22,7 @@ class UserInteraction:
 
 
     def translator(self):
-        translate = input("Desea traductir el tema al inglés? Y/N ")
-        return translate
+        translatorResponse = input("¿Desea traducir el tema al inglés? (Y / N): ").lower()
+        if translatorResponse not in ['y', 'n']:
+            print("Por favor, responde 'y' o 'n'.")
+        return translatorResponse
