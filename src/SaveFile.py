@@ -6,7 +6,6 @@ from reportlab.pdfgen import canvas
 class SaveFile:
     def __init__(self, text):
         self.text = text
-
     def saveAsPdf(self, fileName):
         try:
             c = canvas.Canvas(fileName, pagesize=letter)
@@ -28,7 +27,6 @@ class SaveFile:
             print(f"PDF file '{fileName}' created successfully.")
         except Exception as e:
             return f"An expected error was found: {e}"
-
     def saveAsTxt(self, fileName):
         try:
             with open(fileName, 'w', encoding='utf-8') as file:
