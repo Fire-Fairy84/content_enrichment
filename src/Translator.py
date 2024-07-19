@@ -16,5 +16,3 @@ class Translator:
         except Exception as e:
             return f"An unexpected error was found: {e}"
 
-
-
