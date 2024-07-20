@@ -1,7 +1,7 @@
 from UserInteraction import UserInteraction
-from .Scraper import Scraper
-from .TranslatorService import TranslatorService
-from .CreatePDF import SaveFile
+from Scraper import Scraper
+from TranslatorService import TranslatorService
+from CreatePDF import SaveFile
 
 
 class ContentEnricher:
