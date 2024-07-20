@@ -1,10 +1,13 @@
+import export
 import requests
 from bs4 import BeautifulSoup
 import lxml
 
+
 class Scraper:
     def __init__(self):
         pass
+
     def scrapebot(self, url):
         try:
             texts = []
