@@ -1,7 +1,7 @@
 from .UserInteraction import UserInteraction
 from .Scraper import Scraper
 from .TranslatorService import TranslatorService
-from .SaveFile import SaveFile
+from .CreateFile import SaveFile
 
 class ContentEnricher:
     WikiBaseUrl = 'https://es.wikipedia.org/wiki/'
@@ -13,28 +13,60 @@ class ContentEnricher:
         self.saveFile = None
 
     def process(self):
-        searchTerm = self.ui.generateSearchTerm()
-        translate = self.ui.translator()
-        fileName, userFileExtension = self.ui.saveFile()
+        try:
+            searchTerm = self.ui.generateSearchTerm()
+        except Exception as e:
+            print(f"Error input búsqueda: {e}")
+            return
+
+        try:
+            translate = self.ui.translator()
+        except Exception as e:
+            print(f"Error input traducir: {e}")
+            return
+
+        try:
+            fileName, userFileExtension = self.ui.saveFile()
+        except Exception as e:
+            print(f"Error input nombre de archivo: {e}")
+            return
 
         searchUrl = self.WikiBaseUrl + searchTerm
-        texts = self.scraper.scrapebot(searchUrl)
-        fullText = "\n".join(texts)
+
+        try:
+            texts = self.scraper.scrapebot(searchUrl)
+            if texts is None:
+                print("No se encontró información.")
+                return
+            fullText = "\n".join(texts)
+        except Exception as e:
+            print(f"Error scraping: {e}")
+            return
+
         print("===============================================")
 
-        if translate.lower() == "y":
-            translatedText = self.translator.translateText(fullText, "auto", "en")
-            print("=== TEXTO TRADUCIDO A INGLÉS ===")
-            print(translatedText)
-            print("================================")
-            self.saveFile = SaveFile(translatedText)
-        else:
-            self.saveFile = SaveFile(fullText)
+        try:
+            if translate.lower() == "y":
+                translatedText = self.translator.translateText(fullText, "auto", "en")
+                print("=== TEXTO TRADUCIDO A INGLÉS ===")
+                print(translatedText)
+                print("================================")
+                self.saveFile = SaveFile(translatedText)
+            else:
+                self.saveFile = SaveFile(fullText)
+        except Exception as e:
+            print(f"Error traduciendo: {e}")
+            return
 
-        if userFileExtension == "pdf":
-            self.saveFile.saveAsPdf(fileName + ".pdf")
-        elif userFileExtension == "txt":
-            self.saveFile.saveAsTxt(fileName + ".txt")
-        else:
-            print("Unable to create file.")
+        try:
+            if userFileExtension == "pdf":
+                self.saveFile.saveAsPdf(fileName + ".pdf")
+            elif userFileExtension == "txt":
+                self.saveFile.saveAsTxt(fileName + ".txt")
+            else:
+                print("No se ha podido crear el archivo.")
+        except Exception as e:
+            print(f"Error guardando archivo: {e}")
+            return
+
         fileSaved = True
