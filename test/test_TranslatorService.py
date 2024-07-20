@@ -1,6 +1,12 @@
 from unittest.mock import patch, MagicMock
+import pytest
 from deep_translator.exceptions import TranslationNotFound
 from src.TranslatorService import TranslatorService
+
+
+@pytest.fixture
+def translator():
+    return TranslatorService()
 
 
 def test_translateText_success():
