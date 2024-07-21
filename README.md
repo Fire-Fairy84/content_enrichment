@@ -15,11 +15,11 @@ In response to the growing need for tools that facilitate research and access to
 ## Technologies Used
 
 ### Backend
-- [Python](https://www.python.org/downloads/) v 3.12]: Used to code the project.
-- [Pytest](https://docs.pytest.org/en/8.2.x/) v 8.2.2]: Used to test the funcionalities.
-- [Beautiful Soup](https://pypi.org/project/beautifulsoup4/) v 4.12.3]: Used to do the scraping from Wikipedia.
-- [Deep Translator](https://pypi.org/project/deep-translator/) v 1.11.4]: Used to translate the content from Spanish to English.
-- [Report Lab](https://pypi.org/project/reportlab/) v 4.2.2]: Used to do the funcionality for save the file to PDF or TXT.
+- [Python](https://www.python.org/downloads/) v 3.12: Used to code the project.
+- [Pytest](https://docs.pytest.org/en/8.2.x/) v 8.2.2: Used to test the funcionalities.
+- [Beautiful Soup](https://pypi.org/project/beautifulsoup4/) v 4.12.3: Used to do the scraping from Wikipedia.
+- [Deep Translator](https://pypi.org/project/deep-translator/) v 1.11.4: Used to translate the content from Spanish to English.
+- [Report Lab](https://pypi.org/project/reportlab/) v 4.2.2: Used to do the funcionality for save the file to PDF or TXT.
   
 ## Installation and Configuration
 
