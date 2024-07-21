@@ -1,11 +1,11 @@
 # Content Enrichment
 
-## Index
+## Index 
 
-- [Description](#description)
-- [Technologies Used](#technologies-used)
-- [Installation and Configuration](#installation-and-configuration)
-- [Project Developers](#project-developers)
+- [Description](#description)📝
+- [Technologies Used](#technologies-used)📲
+- [Installation and Configuration](#installation-and-configuration)🛠️
+- [Project Developers](#project-developers) 🦾
 
 
 ## Description
@@ -15,18 +15,17 @@ In response to the growing need for tools that facilitate research and access to
 ## Technologies Used
 
 ### Backend
-- **Python**: Used to code the project.
-- **Pytest**: Used to test the funcionalities.
-- **Beautiful Soup**: Used to do the scraping from Wikipedia.
-- **Deep Translator**: Used to translate the content from Spanish to English.
-- **Report Lab**: Used to do the funcionality for save the file to PDF or TXT.
-
-
+- [Python](https://www.python.org/downloads/): v 3.12]: Used to code the project.
+- [Pytest](https://docs.pytest.org/en/8.2.x/): v 8.2.2]: Used to test the funcionalities.
+- [Beautiful Soup](https://pypi.org/project/beautifulsoup4/): v 4.12.3]: Used to do the scraping from Wikipedia.
+- [Deep Translator](https://pypi.org/project/deep-translator/): v 1.11.4]: Used to translate the content from Spanish to English.
+- [Report Lab](https://pypi.org/project/reportlab/): v 4.2.2]: Used to do the funcionality for save the file to PDF or TXT.
+  
 ## Installation and Configuration
 
 ### Prerequisites
 
-- Python (version 11 or higher)
+- Python (version 3.11 or higher)
 
 ### Installation
 
@@ -63,9 +62,21 @@ In response to the growing need for tools that facilitate research and access to
 - Lorena: Developer
 - Esther Sarasua: Developer
 - Paola Franco: Developer
+    
+<p> <a href="https://github.com/Dpoetess">
+    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"> **Lynn**</a></p>
 
+<p> <a href="https://github.com/RafGab">
+    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"> **Vivi**</a></p>
 
+<p> <a href="https://github.com/Fire-Fairy84">
+    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"> **Esther**</a></p>
 
+<p> <a href="https://github.com/0795PAO">
+    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"> **Paola**</a></p>
+
+<p> <a href="https://github.com/loren-2">
+    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"> **Lorena**</a></p>
 
 
 
