@@ -2,10 +2,10 @@
 
 ## Index 
 
-- [Description](#description)📝
-- [Technologies Used](#technologies-used)📲
-- [Installation and Configuration](#installation-and-configuration)🛠️
-- [Project Developers](#project-developers) 🦾
+[Description](#description)📝
+[Technologies Used](#technologies-used)📲
+[Installation and Configuration](#installation-and-configuration)🛠️
+[Project Developers](#project-developers) 🦾
 
 
 ## Description
