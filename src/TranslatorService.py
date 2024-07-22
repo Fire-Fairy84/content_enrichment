@@ -12,7 +12,7 @@ class TranslatorService:
             translatedText = GoogleTranslator(source=src_lang, target=target_lang).translate(text)
             return translatedText
         except TranslationNotFound:
-            return "Translation not found"
+            return "Traducción no encontrada"
         except Exception as e:
-            return f"An unexpected error was found: {e}"
+            return f"Error: {e}"
 
