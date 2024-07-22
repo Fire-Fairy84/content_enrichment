@@ -31,7 +31,7 @@ class SaveFile:
         try:
             with open(fileName, 'w', encoding='utf-8') as file:
                 file.write(self.text)
-            print(f"Archivo TXT '{fileName}' creado correctamente.")
+            print(f"Achivo TXT '{fileName}' creado correctamente.")
         except Exception as e:
             return f"Error: {e}"
 
