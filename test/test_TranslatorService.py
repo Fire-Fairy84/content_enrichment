@@ -37,7 +37,7 @@ def test_translateText_unsupported_language():
 
         translated_text = translator.translateText(text, src_lang, target_lang)
 
-        assert translated_text == "An unexpected error was found: Unsupported language"
+        assert translated_text == "Error: idioma no valido"
 
 
 def test_translateText_translation_not_found():
@@ -52,4 +52,4 @@ def test_translateText_translation_not_found():
 
         translated_text = translator.translateText(text, src_lang, target_lang)
 
-        assert translated_text == "Translation not found"
+        assert translated_text == "Traducción no encontrada"
