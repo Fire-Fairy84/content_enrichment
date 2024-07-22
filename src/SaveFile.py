@@ -24,16 +24,16 @@ class SaveFile:
                     y -= 12
 
             c.save()
-            print(f"PDF file '{fileName}' created successfully.")
+            print(f"Archivo PDF '{fileName}' creado correctamente.")
         except Exception as e:
-            return f"An expected error was found: {e}"
+            return f"Error: {e}"
     def saveAsTxt(self, fileName):
         try:
             with open(fileName, 'w', encoding='utf-8') as file:
                 file.write(self.text)
-            print(f"TXT file '{fileName}' created successfully.")
+            print(f"Archivo TXT '{fileName}' creado correctamente.")
         except Exception as e:
-            return f"An expected error was found: {e}"
+            return f"Error: {e}"
 
     def wrap_text(self, text, max_width):
         from reportlab.pdfbase.pdfmetrics import stringWidth

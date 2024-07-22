@@ -6,18 +6,18 @@ class UserInteraction:
         pass
 
     def generateSearchTerm(self):
-        userInput = input("tema a buscar: ")
+        userInput = input("Tema a buscar: ")
         capsInput = string.capwords(userInput)
         wordsList = capsInput.split()
         searchTerm = "_".join(wordsList)
-        print(f"el tema que quieres buscar es: {userInput} ")
+        print(f"El tema que quieres buscar es: {userInput} ")
         return searchTerm
 
     def saveFile(self):
         userFileName = input("Escoger un nombre para tu archivo: ")
         filenameSplit = userFileName.split()
         filename = "_".join(filenameSplit)
-        userFileExtension = input("Por favor, escoger la extension: 'pdf' o 'txt'")
+        userFileExtension = input("Por favor, escoger la extension: 'pdf' o 'txt': ")
         print(f"el nombre de tu archivo es: {filename}.{userFileExtension}")
         return filename, userFileExtension
 
