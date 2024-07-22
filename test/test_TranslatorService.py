@@ -33,11 +33,11 @@ def test_translateText_unsupported_language():
 
     with patch('src.TranslatorService.GoogleTranslator') as MockTranslator:
         instance = MockTranslator.return_value
-        instance.translate.side_effect = Exception("Unsupported language")
+        instance.translate.side_effect = Exception("idioma invalida")
 
         translated_text = translator.translateText(text, src_lang, target_lang)
 
-        assert translated_text == "An unexpected error was found: Unsupported language"
+        assert translated_text == "Error: idioma invalida"
 
 
 def test_translateText_translation_not_found():
@@ -52,4 +52,4 @@ def test_translateText_translation_not_found():
 
         translated_text = translator.translateText(text, src_lang, target_lang)
 
-        assert translated_text == "Translation not found"
+        assert translated_text == "Traducción no encontrada"
