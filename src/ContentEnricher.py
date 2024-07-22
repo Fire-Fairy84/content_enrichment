@@ -1,7 +1,7 @@
 from .UserInteraction import UserInteraction
 from .Scraper import Scraper
 from .TranslatorService import TranslatorService
-from .CreateFile import SaveFile
+from .SaveFile import SaveFile
 
 class ContentEnricher:
     WikiBaseUrl = 'https://es.wikipedia.org/wiki/'
@@ -16,19 +16,19 @@ class ContentEnricher:
         try:
             searchTerm = self.ui.generateSearchTerm()
         except Exception as e:
-            print(f"Search input error: {e}")
+            print(f"Error input búsqueda: {e}")
             return
 
         try:
             translate = self.ui.translator()
         except Exception as e:
-            print(f"Translate input error: {e}")
+            print(f"Error input traducir: {e}")
             return
 
         try:
             fileName, userFileExtension = self.ui.saveFile()
         except Exception as e:
-            print(f"Filename or extension input error: {e}")
+            print(f"Error input nombre de archivo: {e}")
             return
 
         searchUrl = self.WikiBaseUrl + searchTerm
@@ -36,7 +36,7 @@ class ContentEnricher:
         try:
             texts = self.scraper.scrapebot(searchUrl)
             if texts is None:
-                print("No information found.")
+                print("No se encontró información.")
                 return
             fullText = "\n".join(texts)
         except Exception as e:
@@ -55,7 +55,7 @@ class ContentEnricher:
             else:
                 self.saveFile = SaveFile(fullText)
         except Exception as e:
-            print(f"Error translating: {e}")
+            print(f"Error traduciendo: {e}")
             return
 
         try:
@@ -64,9 +64,9 @@ class ContentEnricher:
             elif userFileExtension == "txt":
                 self.saveFile.saveAsTxt(fileName + ".txt")
             else:
-                print("Could not create file.")
+                print("No se ha podido crear el archivo.")
         except Exception as e:
-            print(f"Error saving file: {e}")
+            print(f"Error guardando archivo: {e}")
             return
 
         fileSaved = True
